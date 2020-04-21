@@ -10,7 +10,6 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world")
 public class HelloWorldServlet extends HttpServlet {
-    public String name = "";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,7 +18,7 @@ public class HelloWorldServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         if (name != null) {
-            out.println("<h1>Hello, World!" + name + "</h1>");
+            out.println("<h1>Hello, " + name + "</h1>");
         } else {
             out.println("<h1>Hello, world!</h1>");
         }
