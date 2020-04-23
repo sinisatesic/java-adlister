@@ -20,7 +20,11 @@
         <p>${ad.description}</p>
     </c:forEach>
 
-</div>
+
+    <%@include file="/partials/decorative-objects.jsp"%>
+
+            <%@include file="/css/decorative-objects.css"%>
+
 
 </body>
 </html>
