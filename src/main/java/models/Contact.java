@@ -1,3 +1,5 @@
+package models;
+
 public class Contact {
     private long id; //int goes from -2bil to 2bil
                     // unsigned int goes from 0 to 4bil

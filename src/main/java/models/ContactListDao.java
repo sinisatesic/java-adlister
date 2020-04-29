@@ -1,19 +1,21 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContactListDao implements Contacts{
 
-    // We need a List variable to hold all the Contacts
+    // We need a List variable to hold all the models.Contacts
     private List<Contact> contacts = new ArrayList<>();
 
-    // List all the contacts (List<Contact>)
+    // List all the contacts (List<models.Contact>)
     @Override
     public List<Contact> getContacts() {
         return contacts;
     };
 
     // method for saving contacts
-    // will essentially get the length of List<Contact> and +1
+    // will essentially get the length of List<models.Contact> and +1
     @Override
     public long saveContact(Contact contact){
         // check to see if this is the first contact, and if so, add 1 (mysql index starts with 1)
@@ -54,7 +56,6 @@ public class ContactListDao implements Contacts{
     // Let us test out our DAO to ensure everything is working properly
     public static void main(String[] args) {
 
-        Contacts contactDao = new contactListDao();
-
+        Contacts contactDao = new ContactListDao();
     }
 }
