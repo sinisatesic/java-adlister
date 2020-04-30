@@ -19,6 +19,7 @@ public class MySQLAdsDao implements Ads {
                     config.getPassword()
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new RuntimeException("Error", e);
         }
     }
@@ -70,5 +71,13 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    public static void main(String[] args) {
+        // in the main - you can initialize the objects and test their methods that you
+        //created above in this class
+
+        // for any class you're working with, simple to just create a main at the bottom of the class
+        // to test functionality - and delete the main when you're ready to deploy the application
     }
 }
