@@ -52,6 +52,27 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+//    @Override
+//    public Long update(User user) {
+//        String query = "UPDATE users SET (username, email, password) WHERE VALUES (?, ?, ?)";
+//        try {
+//            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+//            stmt.setString(1, user.getUsername());
+//            stmt.setString(2, user.getEmail());
+//            stmt.setString(3, user.getPassword());
+//            stmt.executeUpdate();
+//            ResultSet rs = stmt.getGeneratedKeys();
+//            rs.next();
+//            return rs.getLong(1);
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error creating new user", e);
+//        }
+//    }
+
+
+
+
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
@@ -63,5 +84,8 @@ public class MySQLUsersDao implements Users {
             rs.getString("password")
         );
     }
+
+
+
 
 }
